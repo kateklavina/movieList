@@ -96,15 +96,15 @@ class MovieListTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//     Get the new view controller using segue.destination.
-//     Pass the selected object to the new view controller.
-    if let indexPath = tableView.indexPathForSelectedRow{
-//         Get the new view controller using segue.destination.
-        let detailVC = segue.destination as! DetailViewController
-//         Pass the selected object to the new view controller.
- //detailVC.song = songs[indexPath.row]
-       
-       }}
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  // Get the new view controller using segue.destination.
+  // Pass the selected object to the new view controller.
+  if let indexPath = tableView.indexPathForSelectedRow{
+      // Get the new view controller using segue.destination.
+      let detailVC = segue.destination as! DetailViewController
+      // Pass the selected object to the new view controller.
+    detailVC.myMovieString = movieList[indexPath.row]
+    
+     }}
 
 }

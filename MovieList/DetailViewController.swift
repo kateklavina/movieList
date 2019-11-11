@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-   
+   var myMovieString = String
     
     @IBOutlet weak var movieImageView: UIImageView!
     
