@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-   var myMovieString = String
+    var myMovieString:String!
     
     @IBOutlet weak var movieImageView: UIImageView!
     
@@ -21,7 +21,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+      movieImageView.image = UIImage(named: myMovieString)
+        movieNameLabel.text = myMovieString
 //        // Do any additional setup after loading the view.
     }
     
