@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XVg-4A-Ynd">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,14 +16,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="dQA-he-M69">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="220" id="dQA-he-M69" customClass="MovieTableViewCell" customModule="MovieList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="220"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dQA-he-M69" id="1yf-7W-ZZM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-v2-thg">
+                                            <rect key="frame" x="32" y="11" width="116" height="187"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="187" id="0bH-yH-YZE"/>
+                                                <constraint firstAttribute="width" constant="116" id="NDe-pg-t2D"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpf-w8-mhJ">
+                                            <rect key="frame" x="156" y="11" width="238" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="238" id="2YX-9m-5Az"/>
+                                                <constraint firstAttribute="height" constant="60" id="33X-Lf-3D1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hW4-v2-thg" firstAttribute="leading" secondItem="1yf-7W-ZZM" secondAttribute="leading" constant="32" id="4KE-vG-XmZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="qpf-w8-mhJ" secondAttribute="trailing" constant="20" id="BEI-xJ-Cun"/>
+                                        <constraint firstItem="qpf-w8-mhJ" firstAttribute="leading" secondItem="hW4-v2-thg" secondAttribute="trailing" constant="8" id="Biq-X4-mfa"/>
+                                        <constraint firstItem="hW4-v2-thg" firstAttribute="top" secondItem="1yf-7W-ZZM" secondAttribute="top" constant="11" id="LPP-xP-Hqr"/>
+                                        <constraint firstAttribute="bottom" secondItem="hW4-v2-thg" secondAttribute="bottom" constant="22" id="R4p-Zr-sw0"/>
+                                        <constraint firstItem="qpf-w8-mhJ" firstAttribute="top" secondItem="1yf-7W-ZZM" secondAttribute="top" constant="11" id="mOx-M7-dhT"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="movieImageView" destination="hW4-v2-thg" id="LOX-Nt-Yxo"/>
+                                    <outlet property="movieLabel" destination="qpf-w8-mhJ" id="gcW-Km-Kbc"/>
                                     <segue destination="bYT-Ls-oV0" kind="showDetail" identifier="" id="Vqu-0P-gqq"/>
                                 </connections>
                             </tableViewCell>
